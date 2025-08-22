@@ -1,0 +1,6 @@
+pandas
+pyspark
+psutil
+requests
+matplotlib
+findspark

@@ -1,0 +1,191 @@
+(spark_env) mqang@mqang-legion-5-16ach6:~/Desktop/hadoop-3.2.1$ spark-submit --master yarn --deploy-mode client testgro.py
+==================== Calculating Initial Groceries Data Statistics ====================
+
+Transaction Utility (TU) Statistics for Groceries:
+  summary                  TU
+0   count               14963
+1    mean  14.228218622570692
+2  stddev   7.488991012274423
+3     min   2.131875071225666
+4     max     75.715575693324
+==================== Finished Initial Groceries Data Statistics ====================
+
+==================== Starting HUOMIL Application (Groceries) ====================
+25/06/26 22:50:12 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+HUOMIL running with Application ID: application_1750951271822_0011
+HUOMIL Transactions: 14963
+
+====== HUOMIL: VALID ITEMS in UOList ======
++------------------+---------------+------------------+------------------+
+|              Item|      InvoiceNo|                TU|                IU|
++------------------+---------------+------------------+------------------+
+|        whole milk|1011_2015-09-12|38.209498520457245| 5.447033417937958|
+|       frankfurter|1011_2015-09-12|38.209498520457245| 5.483763911328114|
+|           candles|1011_2015-09-12|38.209498520457245| 5.228949024756912|
+|            grapes|1011_2015-09-12|38.209498520457245|  5.59874307158922|
+|             herbs|1011_2015-09-12|38.209498520457245| 5.406558635671535|
+|  other vegetables|1011_2015-09-12|38.209498520457245| 5.574567541583749|
+|            yogurt|1011_2015-09-12|38.209498520457245| 5.469882917589758|
+|            yogurt|1095_2014-03-25|11.070263525156411| 5.469882917589758|
+|     shopping bags|1095_2014-03-25|11.070263525156411| 5.600380607566653|
+|    tropical fruit|1218_2015-12-29|21.426287814032587| 5.622824465987043|
+|              meat|1218_2015-12-29|21.426287814032587| 5.127480905350676|
+|        whole milk|1218_2015-12-29|21.426287814032587| 5.447033417937958|
+|           candles|1218_2015-12-29|21.426287814032587| 5.228949024756912|
+|            yogurt|1227_2014-08-05|10.772267653264613| 5.469882917589758|
+|whipped/sour cream|1227_2014-08-05|10.772267653264613| 5.302384735674856|
+|  other vegetables|1282_2014-10-24|11.172315016023706| 5.574567541583749|
+|    snack products|1282_2014-10-24|11.172315016023706| 5.597747474439958|
+|       frankfurter|1335_2015-01-16|11.027024707565023| 5.483763911328114|
+|            coffee|1335_2015-01-16|11.027024707565023|5.5432607962369085|
+|       canned beer|1354_2015-11-29|27.424638229030776| 5.476275190193134|
++------------------+---------------+------------------+------------------+
+only showing top 20 rows
+
+========================================
+
+====== HUOMIL: 1-ITEMSETS ======
++--------------------+------------------+-------------------+
+|                Item|        total_util|             avg_uo|
++--------------------+------------------+-------------------+
+|           beverages| 1458.716706910853| 0.4088690375990857|
+|      snack products|151.13918180987883|0.37418977210346743|
+|              dishes| 712.3680315447997| 0.3575105485123561|
+|             napkins| 1893.663664927259| 0.3864272763773288|
+|                meat| 1302.380149959074| 0.3845243067190409|
+|   frozen vegetables|2251.5338153923444|0.37853306233486667|
+|          white wine| 964.6920714031088|0.39028302337679505|
+|         frankfurter|  3180.58306857031| 0.3796643532195271|
+|       cream cheese |  1973.76779813498|0.40059768157217224|
+|           nut snack|134.00986773077994| 0.3595846680489835|
+|long life bakery ...|1510.1649802847412| 0.3894132359458114|
+|  whipped/sour cream|3510.1786950167634| 0.4002901374033153|
+|              yogurt| 7296.823812064752|0.39757621499546614|
+|         canned beer|3926.4893113684752|0.39116154628415134|
+|         soft cheese| 791.6712006621879| 0.3656562639066326|
+|      tropical fruit| 5802.754848898637|0.40067127845435646|
+|                curd|2752.5815198449964| 0.3817058963184183|
+|              grapes|1231.7234757496285| 0.3901207302258873|
+|                 ham|1411.9278799174112|0.39935251071262473|
+|               candy|1247.8471838795688|0.39721889133074667|
++--------------------+------------------+-------------------+
+only showing top 20 rows
+
+==============================
+
+HUOMIL 2-itemset candidates: 37682
+
+====== HUOMIL: 2-ITEMSETS (Sorted by total_util) ======
++----------------+--------------+------------------+------------------+-------------------------------+
+|item1           |item2         |total_util        |avg_uo            |itemset                        |
++----------------+--------------+------------------+------------------+-------------------------------+
+|other vegetables|whole milk    |2545.8622875258648|0.6727280179759663|other vegetables,whole milk    |
+|rolls/buns      |whole milk    |2391.295928047339 |0.6194785461763777|rolls/buns,whole milk          |
+|soda            |whole milk    |2035.7232225729342|0.6319857376958145|soda,whole milk                |
+|whole milk      |yogurt        |1910.4375092177004|0.5977270839313324|whole milk,yogurt              |
+|other vegetables|rolls/buns    |1869.833859543221 |0.6620227153922408|other vegetables,rolls/buns    |
+|other vegetables|soda          |1687.438299216808 |0.6796313592635409|other vegetables,soda          |
+|sausage         |whole milk    |1518.970304552643 |0.5975449401165822|sausage,whole milk             |
+|tropical fruit  |whole milk    |1427.484293882177 |0.6377468985263782|tropical fruit,whole milk      |
+|other vegetables|yogurt        |1391.7054424798557|0.655838675400942 |other vegetables,yogurt        |
+|rolls/buns      |soda          |1381.161344371934 |0.632493925004148 |rolls/buns,soda                |
+|rolls/buns      |yogurt        |1341.0358188739228|0.6158787564055425|rolls/buns,yogurt              |
+|root vegetables |whole milk    |1283.8541403535037|0.6671033901582233|root vegetables,whole milk     |
+|bottled water   |whole milk    |1230.7165110842946|0.6742038957109768|bottled water,whole milk       |
+|bottled beer    |whole milk    |1206.1013729941408|0.659082032069133 |bottled beer,whole milk        |
+|citrus fruit    |whole milk    |1177.638104551931 |0.6347817820367815|citrus fruit,whole milk        |
+|pip fruit       |whole milk    |1138.094676845149 |0.6411576811696786|pip fruit,whole milk           |
+|shopping bags   |whole milk    |1115.482122196709 |0.6398163924482596|shopping bags,whole milk       |
+|pastry          |whole milk    |1101.2675558418305|0.6063828855290202|pastry,whole milk              |
+|other vegetables|tropical fruit|1074.997889651199 |0.6608908464432811|other vegetables,tropical fruit|
+|rolls/buns      |tropical fruit|1041.8095664137184|0.6140745269216519|rolls/buns,tropical fruit      |
++----------------+--------------+------------------+------------------+-------------------------------+
+only showing top 20 rows
+
+==================================================
+==================== Finished HUOMIL Application ====================
+
+==================== Starting HUOPM Application (Groceries) ====================
+25/06/26 22:50:57 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+HUOPM running with Application ID: application_1750951271822_0012
+HUOPM Transactions: 14963
+
+====== HUOPM: 1-ITEMSETS ======
++--------------------+------------------+-------------------+
+|                Item|        total_util|             avg_uo|
++--------------------+------------------+-------------------+
+|           beverages|1458.7167069108534| 0.4197811921860829|
+|            cat food| 966.5717219156791|0.38403914678178896|
+|              dishes| 712.3680315447988| 0.3723127137421944|
+|            cake bar| 549.6477321601457| 0.4102954032733014|
+|             napkins|1893.6636649272618|0.38676540608846655|
+|                meat|1302.3801499590718|0.37024142553030526|
+|          white wine| 964.6920714031073|0.38955318078100437|
+|   frozen vegetables|2251.5338153923494|0.37512715196323276|
+|         frozen fish|   575.12698905513| 0.3878707073862786|
+|         frankfurter|3180.5830685703086| 0.3675651592121422|
+|       cream cheese |1973.7677981349802|0.39830200238924324|
+|      kitchen towels| 165.3184138913798|0.41181449418752997|
+|              liquor|  537.763186636675| 0.3952041797680652|
+|    hygiene articles|1140.0444057832667|0.37699100550620646|
+|long life bakery ...|1510.1649802847414|0.39356617509369074|
+|  whipped/sour cream| 3510.178695016756| 0.3996645273768324|
+|              yogurt|  7296.82381206473| 0.3961071582626599|
+|      roll products | 440.4885605965094|0.36688041066377053|
+|         canned beer|  3926.48931136848|0.39472293140643855|
+|         soft cheese| 791.6712006621883| 0.3554843207903259|
++--------------------+------------------+-------------------+
+only showing top 20 rows
+
+==============================
+
+HUOPM 2-itemset candidates: 37673
+
+====== HUOPM: 2-ITEMSETS (Sorted by total_util) ======
++----------------+--------------+------------------+------------------+-------------------------------+
+|item1           |item2         |total_util        |avg_uo            |itemset                        |
++----------------+--------------+------------------+------------------+-------------------------------+
+|other vegetables|whole milk    |2526.901586529401 |0.6747634246111751|other vegetables,whole milk    |
+|rolls/buns      |whole milk    |2353.1308012469844|0.6102249864026915|rolls/buns,whole milk          |
+|soda            |whole milk    |2031.6136045497235|0.6329811915657817|soda,whole milk                |
+|whole milk      |yogurt        |1874.6870824396412|0.5921902004485153|whole milk,yogurt              |
+|other vegetables|rolls/buns    |1790.4999877676855|0.6523000285454063|other vegetables,rolls/buns    |
+|other vegetables|soda          |1627.138192702056 |0.6701683133931988|other vegetables,soda          |
+|sausage         |whole milk    |1520.1644070442042|0.5989681594598506|sausage,whole milk             |
+|rolls/buns      |soda          |1469.1443420688324|0.6351482977279753|rolls/buns,soda                |
+|tropical fruit  |whole milk    |1429.414318822427 |0.634604349973232 |tropical fruit,whole milk      |
+|other vegetables|yogurt        |1401.5610622731429|0.656404627643737 |other vegetables,yogurt        |
+|rolls/buns      |yogurt        |1370.908413136008 |0.6079289153740138|rolls/buns,yogurt              |
+|root vegetables |whole milk    |1279.1095636714253|0.6693483542328428|root vegetables,whole milk     |
+|bottled water   |whole milk    |1224.3087340900572|0.6754164412391943|bottled water,whole milk       |
+|bottled beer    |whole milk    |1207.9857273733974|0.6493980770538899|bottled beer,whole milk        |
+|citrus fruit    |whole milk    |1168.4193237369013|0.6404664172156911|citrus fruit,whole milk        |
+|pip fruit       |whole milk    |1156.591394991848 |0.6452734546228307|pip fruit,whole milk           |
+|shopping bags   |whole milk    |1128.3912632064066|0.6493903801747958|shopping bags,whole milk       |
+|pastry          |whole milk    |1096.3392831348908|0.6012954376523576|pastry,whole milk              |
+|other vegetables|tropical fruit|1067.897207465089 |0.6513389282239148|other vegetables,tropical fruit|
+|rolls/buns      |tropical fruit|1051.7608422445228|0.622141832561693 |rolls/buns,tropical fruit      |
++----------------+--------------+------------------+------------------+-------------------------------+
+only showing top 20 rows
+
+==================================================
+==================== Finished HUOPM Application ====================
+
+Waiting 60 seconds for History Server...
+--- Fetching metrics for App ID: application_1750951271822_0011 ---
+Found 2 non-driver executors. Analyzing peak memory.
+Successfully fetched metrics for app application_1750951271822_0011. Max executor memory: 682.83 MB
+--- Fetching metrics for App ID: application_1750951271822_0012 ---
+Found 2 non-driver executors. Analyzing peak memory.
+Successfully fetched metrics for app application_1750951271822_0012. Max executor memory: 370.02 MB
+
+
+==================== FINAL GROCERIES COMPARISON ====================
+Jaccard Similarity between 2-itemsets: 0.8078
+
+  Algorithm  1-itemsets  2-itemsets  Execution Time (s)  Driver CPU (s)  Driver Memory (MB)  Max Executor Memory (MB)  Shuffle Read (MB)
+0    HUOMIL         165        4063           30.517080            0.17           95.039062                682.830917          11.136851
+1     HUOPM         164        4875           25.538413            0.15           95.472656                370.023781          11.722850
+
+Biểu đồ đã được lưu thành công vào file: groceries_performance_comparison.png
+
